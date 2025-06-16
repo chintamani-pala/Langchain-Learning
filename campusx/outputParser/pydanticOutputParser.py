@@ -29,3 +29,4 @@ chain = template | model | parser
 result = chain.invoke({"place": "india"})
 
 print(result)
+chain
