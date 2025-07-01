@@ -6,9 +6,6 @@ from langchain.retrievers.document_compressors import LLMChainExtractor
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.documents import Document
 
-
-from langchain_core.documents import Document
-
 documents = [
     Document(
         page_content="""
