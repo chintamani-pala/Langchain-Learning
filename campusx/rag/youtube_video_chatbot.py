@@ -63,27 +63,32 @@ Question: {question}
 )
 
 # === 5. Initialize once ===
-video_id = "rX4dlpvbvu8"
+video_id = "X0btK9X0Xnk"
 transcript_text = get_youtube_transcript(video_id)
 chunks = split_text_to_chunks_and_make_documents(transcript_text)
 vectorstore = setup_vectorstore(chunks)
 retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 4})
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
+
+# structure the context and question for the PromptTemplate
+def get_structured_context(inputs):
+    return {
+        "context": "\n".join([doc.page_content for doc in inputs["context"]]),
+        "question": inputs["question"],
+    }
+
+
 # === 6. Build question-answer chain ===
+parallel_chain = RunnableParallel(
+    {
+        "context": RunnableLambda(lambda q: retriever.invoke(q)),
+        "question": RunnablePassthrough(),
+    }
+)
 retrieval_chain = (
-    RunnableParallel(
-        {
-            "context": RunnableLambda(lambda q: retriever.invoke(q)),
-            "question": RunnablePassthrough(),
-        }
-    )
-    | RunnableLambda(
-        lambda inputs: {
-            "context": "\n".join([doc.page_content for doc in inputs["context"]]),
-            "question": inputs["question"],
-        }
-    )
+    parallel_chain
+    | RunnableLambda(get_structured_context)
     | prompt
     | llm
     | StrOutputParser()
