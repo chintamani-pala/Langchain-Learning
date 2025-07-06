@@ -53,7 +53,7 @@ It is designed for learners and developers who want to explore LLMs, prompt engi
      ```sh
      cp campusx/.env.example campusx/.env
      ```
-   - Edit `campusx/.env` and add your API keys for OpenAI, Anthropic, Google,ExchangeRate-API and LANGSMITH_API_KEY.
+   - Edit `campusx/.env` and add your API keys for OpenAI, Anthropic, Google,ExchangeRate-API and langsmith.
 
    > **Note:** Get your [ExchangeRate-API key](https://app.exchangerate-api.com/dashboard) for currency conversion demos.
 
