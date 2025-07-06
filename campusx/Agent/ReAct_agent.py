@@ -5,6 +5,9 @@ from langsmith import Client
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 client = Client(api_key=os.getenv("LANGSMITH_API_KEY"))
 prompt = client.pull_prompt("hwchase17/react:d15fe3c4", include_model=True)
