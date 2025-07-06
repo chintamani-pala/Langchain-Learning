@@ -24,7 +24,7 @@ def get_wheather_data(city: str) -> str:
     """
     This function fetches the current wheather data for a given city and return the wheather information
     """
-    url = f"https://api.weatherstack.com/current?access_key=7f02f1dc0057d1b6a23f73935f51f05a&query={city}"
+    url = f"https://api.weatherstack.com/current?access_key={os.getenv('WEATHERSTACK_API_KEY')}&query={city}"
     response = requests.get(url)
     data = response.json()
     return data

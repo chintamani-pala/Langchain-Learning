@@ -53,7 +53,7 @@ It is designed for learners and developers who want to explore LLMs, prompt engi
      ```sh
      cp campusx/.env.example campusx/.env
      ```
-   - Edit `campusx/.env` and add your API keys for OpenAI, Anthropic, Google,ExchangeRate-API and langsmith.
+   - Edit `campusx/.env` and add your API keys for OpenAI, Anthropic, Google,ExchangeRate-API, langsmith and [weatherstack](https://weatherstack.com/dashboard).
 
    > **Note:** Get your [ExchangeRate-API key](https://app.exchangerate-api.com/dashboard) for currency conversion demos.
 
@@ -94,6 +94,22 @@ This project demonstrates the use of a **ReAct agent** (Reasoning and Acting) wi
 - Example: The agent can answer questions like "What are the 3 ways to reach Chennai from Bangalore?" by searching the web and reasoning step by step.
 
 See [`campusx/Agent/ReAct_agent.py`](campusx/Agent/ReAct_agent.py) for the implementation and usage.
+
+---
+
+### ReAct Agent 2
+
+This project extends the ReAct agent workflow by allowing the agent to use **multiple tools** in a single reasoning chain, including both web search and weather data retrieval.
+
+- Uses the ReAct paradigm to combine reasoning steps with tool use.
+- Integrates external tools like DuckDuckGo search for real-time information retrieval.
+- Adds a custom tool to fetch current weather data for any city using the Weatherstack API.
+- Utilizes LangSmith for prompt management and experiment tracking.
+- Example: The agent can answer questions like  
+  _"What is the capital of Odisha, then find its current weather condition?"_  
+  by searching for the capital and then fetching the weather for that city.
+
+See [`campusx/Agent/ReAct_agent_2.py`](campusx/Agent/ReAct_agent_2.py) for the implementation and usage.
 
 ---
 
