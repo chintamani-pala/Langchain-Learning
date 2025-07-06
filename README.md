@@ -19,6 +19,7 @@ It is designed for learners and developers who want to explore LLMs, prompt engi
 - **toolcall/**: Tool-calling with LLMs, including currency conversion with real APIs.
 - **tools/**: Custom tools, toolkits, and integrations (e.g., DuckDuckGo, shell).
 - **textspliter/**: Text splitting strategies for chunking documents.
+- **Agent/**: Agent-based workflows, including ReAct agent.
 
 ---
 
@@ -31,6 +32,7 @@ It is designed for learners and developers who want to explore LLMs, prompt engi
 - **Structured Output**: Parse LLM outputs into JSON, Pydantic, or TypedDict formats.
 - **Document Loading**: Load and split text, PDF, and web data for AI processing.
 - **Streamlit Apps**: Interactive UIs for prompt testing and research tools.
+- **Agent Workflows**: Implement ReAct and other agent-based reasoning with tool use.
 
 ---
 
@@ -82,6 +84,19 @@ See [`campusx/rag/youtube_video_chatbot.py`](campusx/rag/youtube_video_chatbot.p
 
 ---
 
+### ReAct Agent
+
+This project demonstrates the use of a **ReAct agent** (Reasoning and Acting) with LangChain and Google Gemini:
+
+- Uses the ReAct paradigm to combine reasoning steps with tool use.
+- Integrates external tools like DuckDuckGo search for real-time information retrieval.
+- Utilizes LangSmith for prompt management and experiment tracking.
+- Example: The agent can answer questions like "What are the 3 ways to reach Chennai from Bangalore?" by searching the web and reasoning step by step.
+
+See [`campusx/Agent/ReAct_agent.py`](campusx/Agent/ReAct_agent.py) for the implementation and usage.
+
+---
+
 ## 📚 Learning Goals
 
 - Understand how to build LLM-powered apps with LangChain.
@@ -89,6 +104,7 @@ See [`campusx/rag/youtube_video_chatbot.py`](campusx/rag/youtube_video_chatbot.p
 - Integrate external tools and APIs with LLMs.
 - Build retrieval-augmented and multi-step reasoning pipelines.
 - Experiment with document loaders and vector stores.
+- Explore agent-based workflows like ReAct for advanced reasoning.
 
 ---
 
