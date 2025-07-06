@@ -4,10 +4,11 @@ openai
 langchain-anthropic
 langchain-google-genai
 google-generativeai
-
 langchain-huggingface
 transformers
 huggingface-hub
 python-dotenv
 numpy
 scikit-learn
+duckduckgo-search
+langchain-experimental
