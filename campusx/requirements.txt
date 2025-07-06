@@ -12,3 +12,7 @@ numpy
 scikit-learn
 duckduckgo-search
 langchain-experimental
+faiss-cpu
+youtube-transcript-api
+streamlit
+streamlit-javascript
