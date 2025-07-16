@@ -8,18 +8,19 @@ It is designed for learners and developers who want to explore LLMs, prompt engi
 
 ## 📂 Project Structure
 
-- **models/**: Demos for using OpenAI, Google Gemini, and Anthropic chat models.
-- **chains/**: Sequential, parallel, and conditional chains for multi-step LLM workflows.
-- **prompts/**: Prompt engineering, dynamic prompts, and Streamlit prompt UIs.
-- **outputParser/**: Structured output parsing with Pydantic, JSON, and custom schemas.
-- **structuredOutput/**: TypedDict, Pydantic, and JSON schema-based structured outputs.
-- **retriever/**: Vector store retrieval, multi-query, MMR, and Wikipedia retrievers.
-- **rag/**: Retrieval-Augmented Generation (RAG) pipelines (e.g., YouTube video chatbot).
-- **DocumentLoader/**: Loading and splitting text, PDF, and web documents.
-- **toolcall/**: Tool-calling with LLMs, including currency conversion with real APIs.
-- **tools/**: Custom tools, toolkits, and integrations (e.g., DuckDuckGo, shell).
-- **textspliter/**: Text splitting strategies for chunking documents.
-- **Agent/**: Agent-based workflows, including ReAct agent.
+- [**models/**](campusx/models/)(campusx/models/): Demos for using OpenAI, Google Gemini, and Anthropic chat models.
+- [**prompts/**](campusx/prompts/): Prompt engineering, dynamic prompts, and Streamlit prompt UIs.
+- [**structuredOutput/**](campusx/structuredOutput/): TypedDict, Pydantic, and JSON schema-based structured outputs.
+- [**outputParser/**](campusx/outputParser/): Structured output parsing with Pydantic, JSON, and custom schemas.
+- [**chains/**](campusx/chains/): Sequential, parallel, and conditional chains for multi-step LLM workflows.
+- [**runnables/**](campusx/runnables/): Core LangChain components (LLMs, prompts, functions) that can be invoked, composed, streamed, or chained declaratively.
+- [**DocumentLoader/**](campusx/DocumentLoader/): Loading and splitting text, PDF, and web documents.
+- [**textspliter/**](campusx/textspliter/): Text splitting strategies for chunking documents.
+- [**retriever/**](campusx/retriever/): Vector store retrieval, multi-query, MMR, and Wikipedia retrievers.
+- [**rag/**](campusx/rag/): Retrieval-Augmented Generation (RAG) pipelines (e.g., YouTube video chatbot).
+- [**tools/**](campusx/tools/): Custom tools, toolkits, and integrations (e.g., DuckDuckGo, shell).
+- [**toolcall/**](campusx/toolcall/): Tool-calling with LLMs, including currency conversion with real APIs.
+- [**Agent/**](campusx/Agent/): Agent-based workflows, including ReAct agent.
 
 ---
 
@@ -64,6 +65,7 @@ It is designed for learners and developers who want to explore LLMs, prompt engi
 ### Currency Conversion Tool
 
 This project includes a tool-using LLM agent that can:
+
 - Fetch real-time currency conversion rates using ExchangeRate-API.
 - Convert amounts between currencies using up-to-date rates.
 - Demonstrates multi-step tool use and reasoning.
@@ -75,6 +77,7 @@ See [`campusx/toolcall/currency_conversion_project.py`](campusx/toolcall/currenc
 ### YouTube Video Chatbot (RAG)
 
 This project demonstrates a Retrieval-Augmented Generation (RAG) chatbot that:
+
 - Fetches and processes YouTube video transcripts.
 - Splits transcripts into chunks and creates a vector store for semantic search.
 - Uses a retriever to find relevant transcript parts for a user's question.
